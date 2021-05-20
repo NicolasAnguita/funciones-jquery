@@ -154,11 +154,18 @@
         $(".f p").text("<h1>Modificando p como texto<h1>");
         });
 
+        $("#btnVal").click(function(){
+            let nombre = $("#inputPassword5").val();
+            $(".g p").html(nombre);
+        });
+
         $("#btnAttr").click(function(){
-            let nombre = $(".g input").attr("inputPassword5");
-            $(".g p").html("nombre");
+            let atributo = $("#btnAttr").attr("class");
+            $(".g p").html("este boton tiene la clase " +atributo + "en boostrap");
         });
         
+       
+
     </script>
 </body>
 </html>
