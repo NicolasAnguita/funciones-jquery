@@ -15,8 +15,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>   Estos son ejemplos de visualizaciones al hacer click con JQUERY</h1>
         <div class="row">
+            <h1>   Estos son ejemplos de visualizaciones al hacer click con JQUERY</h1>
+        </div>
+        <div class="row mt-4">
             <div class="col a">
                 <h3>Hide - Show - Toggle </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni obcaecati officiis veniam. Praesentium cum doloribus consectetur at nemo, maxime repudiandae culpa est, dignissimos harum dicta saepe? Magnam illum fugiat beatae.</p>
@@ -40,8 +42,43 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-4">
+            <div class="col d">
+                <h3>Add, Remove or Toggle Class </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi quo laudantium, ea minima ut qui animi fugiat blanditiis quibusdam. Numquam officiis non nisi illum. Reprehenderit corrupti sed eaque minus.</p>
+                <button id="btnAdd" class="btn btn-success">Add Class</button>
+                <button id="btnRemo" class="btn btn-success">Remove Class</button>
+                <button id="btnToggCl" class="btn btn-success">Toggle Class</button>
+            </div>
+            <div class="col e">
+                <h3>Before, After, Append</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi quo laudantium, ea minima ut qui animi fugiat blanditiis quibusdam. Numquam officiis non nisi illum. Reprehenderit corrupti sed eaque minus.</p>
+                <button id="btnBefore" class="btn btn-warning">Before</button>
+                <button id="btnAfter" class="btn btn-warning">After</button>
+                <button id="btnAppend" class="btn btn-warning">Append</button>
+            </div>
+            <div class="col f">
+                <h3>html, text</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi quo laudantium, ea minima ut qui animi fugiat blanditiis quibusdam. Numquam officiis non nisi illum. Reprehenderit corrupti sed eaque minus.</p>
+                <button id="btnHtml" class="btn btn-danger">HTML</button>
+                <button id="btnText" class="btn btn-danger">Text</button>
+            </div>
+        </div>
+            <div class="row mt-4">
+                <div class="col-4 g">
+                    <h3>attr, val</h3>       
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil deleniti vero a aut odit iste exercitationem numquam nobis, obcaecati doloribus in, tenetur modi dolores reiciendis quasi, ab eius nam dicta!</p>
+                    <label for="inputPassword5" class="form-label">Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                    <button id="btnAttr" class="btn btn-primary">ATTR</button>
+                    <button id="btnVal" class="btn btn-primary">VAL</button>
+                </div>
+            </div>
+        </div>
     </div>
     
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -85,9 +122,43 @@
         $(".c p").fadeOut();
         });
 
+        $("#btnAdd").click(function(){
+        $(".d p").addClass("text-success");
+        });
 
+        $("#btnRemo").click(function(){
+        $(".d p").removeClass("text-success");
+        });
 
+        $("#btnToggCl").click(function(){
+        $(".d p").toggleClass("text-success");
+        });
+         
+        $("#btnBefore").click(function(){
+        $(".e p").before("ANTES");
+        });
 
+        $("#btnAfter").click(function(){
+        $(".e p").after("DESPUES");
+        });
+
+        $("#btnAppend").click(function(){
+        $(".e p").append("DENTROALFINAL");
+        });
+
+        $("#btnHtml").click(function(){
+        $(".f p").html("<h1>Modificando p en HTML por h1<h1>");
+        });
+
+        $("#btnText").click(function(){
+        $(".f p").text("<h1>Modificando p como texto<h1>");
+        });
+
+        $("#btnAttr").click(function(){
+            let nombre = $(".g input").attr("inputPassword5");
+            $(".g p").html("nombre");
+        });
+        
     </script>
 </body>
 </html>
